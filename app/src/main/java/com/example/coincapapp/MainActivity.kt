@@ -4,6 +4,9 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import com.example.coincapapp.ui.theme.CoinCapAppTheme
+import com.example.coincapapp.views.MainScreen
+import dagger.hilt.android.AndroidEntryPoint
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -20,39 +23,15 @@ import com.example.coincapapp.models.Asset
 import com.example.coincapapp.ui.theme.CoinCapAppTheme
 import com.example.coincapapp.views.AssetRow
 
+
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
             CoinCapAppTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Column(
-                        verticalArrangement = Arrangement.Center,
-                        modifier = Modifier.fillMaxSize()
-                    ) {
-                        AssetRow(
-                            Asset(
-                                id = "1",
-                                name = "Bitcoin",
-                                symbol = "BTC",
-                                percentage = 5.38,
-                                price = "87800"
-                            )
-                        )
-                        Spacer(modifier = Modifier.size(16.dp))
-                        AssetRow(
-                            Asset(
-                                id = "2",
-                                name = "Ethereum",
-                                symbol = "ETH",
-                                percentage = -8.28,
-                                price = "1800"
-                            )
-                        )
-
-                    }
-                }
+                MainScreen()
             }
         }
     }
