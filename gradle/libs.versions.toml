@@ -1,5 +1,5 @@
 [versions]
-agp = "8.9.0"
+agp = "8.9.1"
 kotlin = "2.0.21"
 coreKtx = "1.15.0"
 junit = "4.13.2"
@@ -14,6 +14,8 @@ ktor = "3.1.2"
 coroutines = "1.9.0"
 hilt-navigation = "1.2.0"
 kotlinxSerializationJson = "1.6.3"
+firebaseBom = "33.13.0"
+
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -48,6 +50,9 @@ ktor-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation",
 
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
 kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
+
+firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }
+firebase-auth = { module = "com.google.firebase:firebase-auth"}
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

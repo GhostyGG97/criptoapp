@@ -35,7 +35,7 @@ fun NavigationGraph(navController: NavHostController) {
         composable(BottomNavigationItem.Favourites.route) { Favourites() }
         composable(BottomNavigationItem.Settings.route) { Settings() }
 
-        composable("${BottomNavigationItem.Home.route}/${assetIdKey}") { backStackEntry ->
+        composable("${BottomNavigationItem.Home.route}/{assetId}") { backStackEntry ->
             AssetDetailView(
                 assetId = backStackEntry.arguments?.getString(assetIdKey) ?: "missing asset",
                 navController
